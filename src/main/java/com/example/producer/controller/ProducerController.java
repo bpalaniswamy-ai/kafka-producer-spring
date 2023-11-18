@@ -14,6 +14,6 @@ public class ProducerController {
     public ResponseEntity<String> publishStringMessage(@PathVariable String message){
 
         log.info("Message from request : {}", message);
-        return ResponseEntity.ok("Published successfully");
+        return ResponseEntity.ok("Published successfully!!");
     }
 }
