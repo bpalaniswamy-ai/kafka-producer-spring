@@ -15,7 +15,7 @@ public class KafkaMessagePublisher {
     public void sendMessageToTopic(String message) {
         template.send("topic-3", message)
                 .thenAccept(result -> {
-                    log.info("message sent to topic: {}, with offset: {}", "topic-1", result.getRecordMetadata().offset());
+                    log.info("message sent to topic: {}, partition: {}, with offset: {}", "topic-1", result.getRecordMetadata().partition(), result.getRecordMetadata().offset());
                 });
     }
 }
